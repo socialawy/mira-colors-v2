@@ -33,13 +33,16 @@ lerna-debug.log*
 # OS generated files
 Thumbs.db
 
-# Project specific files
-*.md
+# Project specific files (exclude docs but keep essential files)
+mira-colors-revamp.md
+project-template.md
+project_summary.md
 !.gitignore
 !package.json
 !tsconfig.json
 !vite.config.ts
 !netlify.toml
+!README.md
 
 # Windsurf workspace files
 .windsurf

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mira-Colors Learning App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            shake: 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
+            colorWashFade: 'colorWashFade 1.5s ease-out forwards', // Increased duration
+            glowPulse: 'glowPulse 2s infinite ease-in-out',
+            fadeInScaleUp: 'fadeInScaleUp 0.3s ease-out forwards', 
+            avatarHappy: 'avatarHappy 0.6s ease-in-out',
+            avatarSad: 'avatarSad 0.5s ease-in-out',
+            particleN: 'particleN 1.6s ease-out forwards', // Increased duration
+            particleNE: 'particleNE 1.6s ease-out forwards', // Increased duration
+            particleE: 'particleE 1.6s ease-out forwards', // Increased duration
+            particleSE: 'particleSE 1.6s ease-out forwards', // Increased duration
+            particleS: 'particleS 1.6s ease-out forwards', // Increased duration
+            particleSW: 'particleSW 1.6s ease-out forwards', // Increased duration
+            particleW: 'particleW 1.6s ease-out forwards', // Increased duration
+            particleNW: 'particleNW 1.6s ease-out forwards', // Increased duration
+            pulseOnce: 'pulseOnce 0.5s ease-in-out', 
+          },
+          keyframes: {
+            shake: {
+              '0%, 100%': { transform: 'translateX(0)' },
+              '10%, 30%, 50%, 70%, 90%': { transform: 'translateX(-10px)' },
+              '20%, 40%, 60%, 80%': { transform: 'translateX(10px)' }
+            },
+            colorWashFade: { // Adjusted keyframes for longer visibility and new duration
+              '0%': { opacity: '0' },
+              '30%': { opacity: '0.35' },
+              '80%': { opacity: '0.35' },
+              '100%': { opacity: '0' }
+            },
+            glowPulse: { 
+              '0%, 100%': { transform: 'scale(1)', filter: 'drop-shadow(0 0 3px currentColor)' },
+              '50%': { transform: 'scale(1.03)', filter: 'drop-shadow(0 0 7px currentColor)' }
+            },
+            fadeInScaleUp: { 
+              '0%': { opacity: '0', transform: 'scale(0.95)' },
+              '100%': { opacity: '1', transform: 'scale(1)' }
+            },
+            avatarHappy: {
+              '0%, 100%': { transform: 'translateY(0) scale(1)' },
+              '50%': { transform: 'translateY(-6px) scale(1.15) rotate(5deg)' },
+            },
+            avatarSad: {
+              '0%, 100%': { transform: 'translateX(0) rotate(0deg)' },
+              '20%, 60%': { transform: 'translateX(-4px) rotate(-8deg)' },
+              '40%, 80%': { transform: 'translateX(4px) rotate(8deg)' },
+            },
+            particleN: {
+              '0%': { transform: 'translate(0, 0) scale(1)', opacity: '1' },
+              '100%': { transform: 'translate(0, -250px) scale(0.2)', opacity: '0' } 
+            },
+            particleNE: {
+              '0%': { transform: 'translate(0, 0) scale(1)', opacity: '1' },
+              '100%': { transform: 'translate(180px, -180px) scale(0.2)', opacity: '0' } 
+            },
+            particleE: {
+              '0%': { transform: 'translate(0, 0) scale(1)', opacity: '1' },
+              '100%': { transform: 'translate(250px, 0) scale(0.2)', opacity: '0' } 
+            },
+            particleSE: {
+              '0%': { transform: 'translate(0, 0) scale(1)', opacity: '1' },
+              '100%': { transform: 'translate(180px, 180px) scale(0.2)', opacity: '0' } 
+            },
+            particleS: {
+              '0%': { transform: 'translate(0, 0) scale(1)', opacity: '1' },
+              '100%': { transform: 'translate(0, 250px) scale(0.2)', opacity: '0' } 
+            },
+            particleSW: {
+              '0%': { transform: 'translate(0, 0) scale(1)', opacity: '1' },
+              '100%': { transform: 'translate(-180px, 180px) scale(0.2)', opacity: '0' } 
+            },
+            particleW: {
+              '0%': { transform: 'translate(0, 0) scale(1)', opacity: '1' },
+              '100%': { transform: 'translate(-250px, 0) scale(0.2)', opacity: '0' } 
+            },
+            particleNW: {
+              '0%': { transform: 'translate(0, 0) scale(1)', opacity: '1' },
+              '100%': { transform: 'translate(-180px, -180px) scale(0.2)', opacity: '0' } 
+            },
+            pulseOnce: { 
+              '0%, 100%': { opacity: '0' },
+              '50%': { opacity: '1' },
+            },
+          }
+        }
+      }
+    }
+  </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-gray-100">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
